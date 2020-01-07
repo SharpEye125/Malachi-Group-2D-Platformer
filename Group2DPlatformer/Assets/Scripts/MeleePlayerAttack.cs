@@ -8,6 +8,8 @@ public class MeleePlayerAttack : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public int attackDamage = 1;
+    public float attackRate = 1f;
+    float nextAttackTime = 0f;
     public LayerMask enemyLayers;
 
     // Start is called before the first frame update
@@ -19,9 +21,13 @@ public class MeleePlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Time.time >= nextAttackTime)
         {
-            Attack();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
         }
     }
     void Attack()
