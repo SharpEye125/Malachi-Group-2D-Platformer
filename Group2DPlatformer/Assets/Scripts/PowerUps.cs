@@ -6,6 +6,7 @@ public class PowerUps : MonoBehaviour
 {
     public Transform bounceProjectile;
     public float bounceSpeed = 3f;
+    public float bounceHeight = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +22,12 @@ public class PowerUps : MonoBehaviour
     public void BounceProjectile()
     {
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (gameObject.tag == "Ground")
+        {
+
+        }
     }
 }

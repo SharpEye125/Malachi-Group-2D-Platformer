@@ -8,6 +8,7 @@ public class LevelChanger : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
+        GetComponent<Canvas>().enabled = true;
         lastLevel = GameObject.Find("Player").GetComponent<Player>().level;
     }
     void Update()
