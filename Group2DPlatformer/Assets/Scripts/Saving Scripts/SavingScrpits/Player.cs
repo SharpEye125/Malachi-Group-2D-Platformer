@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public int level;
-    public int health = 40;
+    //public int health = 40;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
 
         level = data.level;
-        health = data.health;
+        //health = data.health;
 
         //Vector3 position;
         //position.x = data.position[0];

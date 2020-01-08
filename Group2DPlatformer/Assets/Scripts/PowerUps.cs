@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PowerUps : MonoBehaviour
 {
+    public Transform bounceProjectile;
+    public float bounceSpeed = 3f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +17,9 @@ public class PowerUps : MonoBehaviour
     void Update()
     {
         
+    }
+    public void BounceProjectile()
+    {
+
     }
 }

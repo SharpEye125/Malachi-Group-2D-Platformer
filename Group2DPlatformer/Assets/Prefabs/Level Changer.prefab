@@ -43,7 +43,7 @@ Animator:
   m_GameObject: {fileID: 8774113803011614937}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0db5fc663b6c7af49bf4d4ff4d75f08c, type: 2}
+  m_Controller: {fileID: 9100000, guid: b62068484b05c22469cd2d558e004c2c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8774113803011614936}
+  lastLevel: 0
 --- !u!1 &8774113803701989161
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,8 +199,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -570.5, y: 317}
-  m_SizeDelta: {x: 1141, y: 634}
+  m_AnchoredPosition: {x: -570.5, y: 259.5}
+  m_SizeDelta: {x: 1141, y: 519}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8774113803788483095
 CanvasRenderer:
@@ -222,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
