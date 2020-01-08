@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     }
     public void StartGame()
     {
-        GameObject.Find("Level Changer").GetComponent<LevelChanger>().FadeToNextLevel();
+        SceneManager.LoadScene("Level 1");
     }
     public void QuitGame()
     {
@@ -30,9 +30,5 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level Select");
         GetComponent<Canvas>().enabled = false;
-    }
-    public void ContinueGame(int buildIndex)
-    {
-        GameObject.Find("Level Changer").GetComponent<LevelChanger>().FadeToLastLevel(buildIndex);
     }
 }
