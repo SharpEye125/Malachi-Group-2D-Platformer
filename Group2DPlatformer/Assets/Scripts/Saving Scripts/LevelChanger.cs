@@ -8,15 +8,13 @@ public class LevelChanger : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-        GetComponent<Canvas>().enabled = true;
         lastLevel = GameObject.Find("Player").GetComponent<Player>().level;
     }
     void Update()
     {
-        //if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
-            //FadeToNextLevel();
-
+            FadeToNextLevel();
         }
     }
     public void FadeToLevel(int levelIndex)
@@ -26,7 +24,7 @@ public class LevelChanger : MonoBehaviour
     }
     public void OnFadeComplete()
     {
-        if (levelToLoad >= 4)
+        if (levelToLoad >=5)
         {
             levelToLoad = 0;
         }

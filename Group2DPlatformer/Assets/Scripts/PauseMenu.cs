@@ -33,7 +33,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadMainMenu(int buildIndex)
     {
         GameObject.Find("Player").GetComponent<Player>().SavePlayer(buildIndex);
-        SceneManager.LoadScene("Title Screen");
+        SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1;
     }
     public void Resume()
