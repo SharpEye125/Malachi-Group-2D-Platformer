@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PowerUps : MonoBehaviour
 {
-    public Transform bounceProjectile;
-    public float bounceSpeed = 3f;
-    public float bounceHeight = 1f;
-
+    public int powerUp;
+    public float timer = 0f;
+    public float powerUpTimer = 10f;
+    bool hasPowerUp = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,17 +17,45 @@ public class PowerUps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    public void BounceProjectile()
-    {
-
+        if (hasPowerUp == true)
+        {
+            timer += Time.deltaTime;
+        }
+        else if (timer >= powerUpTimer)
+        {
+            hasPowerUp = false;
+            powerUp = 0;
+            timer = 0;
+            UpdatePowerUps();
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.tag == "Ground")
+        if (gameObject.tag == "PowerUp1")
         {
-
+            powerUp = 1;
+            hasPowerUp = true;
+            timer = 0;
         }
+
+        else if (gameObject.tag == "PowerUp2")
+        {
+            powerUp = 2;
+            hasPowerUp = true;
+            timer = 0;
+        }
+
+        if (gameObject.tag == "PowerUp3")
+        {
+            powerUp = 3;
+            hasPowerUp = true;
+            timer = 0;
+        }
+
+        UpdatePowerUps();
+    }
+    void UpdatePowerUps()
+    {
+        GetComponent<ShootingScript>().powerUps = powerUp;
     }
 }

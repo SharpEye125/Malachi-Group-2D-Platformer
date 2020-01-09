@@ -9,6 +9,7 @@ public class PlatformerMove : MonoBehaviour
     public int maxJumps = 2;
     public int jumpCount = 0;
     bool grounded = false;
+    bool right;
     Animator anim;
 
     // Start is called before the first frame update
@@ -38,14 +39,15 @@ public class PlatformerMove : MonoBehaviour
             Vector3 s = transform.localScale;
             s.x = 1;
             transform.localScale = s;
+            right = true;
         }
         else if (x < 0)
         {
             Vector3 s = transform.localScale;
             s.x = -1;
             transform.localScale = s;
+            right = false;
             //GetComponent<SpriteRenderer>().flipX = true;
-            //GameObject.Find("Flash Light").GetComponent
         }
     }
     public void Jump()
