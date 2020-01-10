@@ -8,16 +8,21 @@ public class Bullet : MonoBehaviour
     public float speed = 5f;
     public int damage = 1;
     public Rigidbody2D rb;
+    public float timer = 0f;
+    public float bulletLifetime = 10f;
+    float playerSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
+        
         rb.velocity = transform.right * speed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        float fireX = Input.GetAxisRaw("Horizontal");
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)

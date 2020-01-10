@@ -26,6 +26,7 @@ public class Bounce : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         rb.velocity = new Vector2 (velocity.x, - velocity.y);
+        
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)

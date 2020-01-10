@@ -7,7 +7,7 @@ public class PowerUps : MonoBehaviour
     public int powerUp;
     public float timer = 0f;
     public float powerUpTimer = 10f;
-    bool hasPowerUp = false;
+    public bool hasPowerUp = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,32 +20,32 @@ public class PowerUps : MonoBehaviour
         if (hasPowerUp == true)
         {
             timer += Time.deltaTime;
-        }
-        else if (timer >= powerUpTimer)
-        {
-            hasPowerUp = false;
-            powerUp = 0;
-            timer = 0;
-            UpdatePowerUps();
+            if (timer > powerUpTimer)
+                {
+                    hasPowerUp = false;
+                    powerUp = 0;
+                    timer = 0;
+                    UpdatePowerUps();
+                }
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.tag == "PowerUp1")
+        if (collision.tag == ("PowerUp1"))
         {
             powerUp = 1;
             hasPowerUp = true;
             timer = 0;
         }
 
-        else if (gameObject.tag == "PowerUp2")
+        if (collision.tag == ("PowerUp2"))
         {
             powerUp = 2;
             hasPowerUp = true;
             timer = 0;
         }
 
-        if (gameObject.tag == "PowerUp3")
+        if (collision.tag == ("PowerUp3"))
         {
             powerUp = 3;
             hasPowerUp = true;
@@ -54,6 +54,7 @@ public class PowerUps : MonoBehaviour
 
         UpdatePowerUps();
     }
+
     void UpdatePowerUps()
     {
         GetComponent<ShootingScript>().powerUps = powerUp;

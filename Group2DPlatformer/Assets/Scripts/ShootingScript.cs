@@ -18,27 +18,34 @@ public class ShootingScript : MonoBehaviour
         
     }
 
+    //GetAxisRaw if value /= 0 then multiply projectile value by velocity when spawned
+
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetButtonDown("Fire1"))
+        float fireX = Input.GetAxisRaw("Horizontal");
+        if (fireX != 0)
+        {
+
+        }
+            if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
         }
     }
     void Shoot()
     {
+        float fireX = Input.GetAxisRaw("Horizontal");
         switch (powerUps)
         {
             case 1:
-                Instantiate(bullet, firePoint.position, firePoint.rotation);
+                Instantiate(bullet, firePoint.position, Quaternion.identity);
                 break;
             case 2:
-                Instantiate(bounce, firePoint.position, firePoint.rotation);
+                Instantiate(bounce, firePoint.position, Quaternion.identity);
                 break;
             case 3:
-                Instantiate(temp, firePoint.position, firePoint.rotation);
+                Instantiate(temp, firePoint.position, Quaternion.identity);
                 break;
             default:
 
