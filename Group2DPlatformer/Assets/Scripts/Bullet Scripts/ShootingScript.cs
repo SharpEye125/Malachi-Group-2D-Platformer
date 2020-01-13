@@ -7,7 +7,7 @@ public class ShootingScript : MonoBehaviour
     public Transform firePoint;
     public GameObject bullet;
     public GameObject bounce;
-    public GameObject temp;
+    public GameObject tracker;
 
     [Range(0, 3)]
     public int powerUps = 3;
@@ -50,7 +50,7 @@ public class ShootingScript : MonoBehaviour
                 Instantiate(bounce, firePoint.position, firePoint.rotation);
                 break;
             case 3:
-                Instantiate(temp, firePoint.position, firePoint.rotation);
+                Instantiate(tracker, firePoint.position, firePoint.rotation);
                 break;
             default:
 

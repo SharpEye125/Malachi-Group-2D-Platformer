@@ -434,8 +434,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 942540712}
   bullet: {fileID: 7468157689472533120, guid: f74e40083715e1b439bf42104e5164a6, type: 3}
-  bounce: {fileID: 7755919608066329012, guid: 811a3346bcfdc6e4d824d2e70258d919, type: 3}
-  temp: {fileID: 7755919608066329012, guid: 811a3346bcfdc6e4d824d2e70258d919, type: 3}
+  bounce: {fileID: 4243102509042112585, guid: 5c50f39d8d8bda54cbb5a6586702b278, type: 3}
+  tracker: {fileID: 926562892346723591, guid: dae7de0f7f4f3b24ebaee9df24136f4f, type: 3}
   powerUps: 0
 --- !u!114 &319474394
 MonoBehaviour:
@@ -1609,7 +1609,7 @@ GameObject:
   - component: {fileID: 886781698}
   m_Layer: 9
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

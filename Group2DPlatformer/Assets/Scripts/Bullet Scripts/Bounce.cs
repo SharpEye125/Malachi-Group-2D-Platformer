@@ -8,7 +8,7 @@ public class Bounce : MonoBehaviour
     public float bounceHeight = 1f;
     public int damage = 1;
     public Rigidbody2D rb;
-    public Vector2 velocity;
+    //public Vector2 velocity;
     // Start is called before the first frame update
     void Start()
     {
