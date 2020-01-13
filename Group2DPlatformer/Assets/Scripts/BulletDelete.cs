@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletDestroy : MonoBehaviour
+public class BulletDelete : MonoBehaviour
 {
     public float timer = 0;
     public float bulletLifetime = 10;
@@ -11,7 +11,7 @@ public class BulletDestroy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
