@@ -18,6 +18,7 @@ public class BulletDelete : MonoBehaviour
     void Update()
     {
 
+
         if (lifetimeDestroy == true)
         {
             timer += Time.deltaTime;

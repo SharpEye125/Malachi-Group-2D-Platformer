@@ -39,14 +39,14 @@ public class PlatformerMove : MonoBehaviour
             Vector3 s = transform.localScale;
             s.x = 1;
             transform.localScale = s;
-            right = true;
+            
         }
         else if (x < 0)
         {
             Vector3 s = transform.localScale;
             s.x = -1;
             transform.localScale = s;
-            right = false;
+            
             //GetComponent<SpriteRenderer>().flipX = true;
         }
     }

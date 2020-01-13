@@ -23,29 +23,34 @@ public class ShootingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float fireX = Input.GetAxisRaw("Horizontal");
-        if (fireX != 0)
+        float movegDir = Input.GetAxisRaw("Horizontal");
+        if (movegDir == 1)
         {
-
+            firePoint.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-            if (Input.GetButtonDown("Fire1"))
+        else if (movegDir == -1)
+        {
+            firePoint.transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+
+        if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
         }
+
     }
     void Shoot()
     {
-        float fireX = Input.GetAxisRaw("Horizontal");
         switch (powerUps)
         {
             case 1:
-                Instantiate(bullet, firePoint.position, Quaternion.identity);
+                Instantiate(bullet, firePoint.position, firePoint.rotation);
                 break;
             case 2:
-                Instantiate(bounce, firePoint.position, Quaternion.identity);
+                Instantiate(bounce, firePoint.position, firePoint.rotation);
                 break;
             case 3:
-                Instantiate(temp, firePoint.position, Quaternion.identity);
+                Instantiate(temp, firePoint.position, firePoint.rotation);
                 break;
             default:
 
