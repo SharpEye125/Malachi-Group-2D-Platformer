@@ -35,19 +35,19 @@ public class PlatformerMove : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         if (x > 0)
         {
-            //GetComponent<SpriteRenderer>().flipX = false;
-            Vector3 s = transform.localScale;
-            s.x = 1;
-            transform.localScale = s;
+            GetComponent<SpriteRenderer>().flipX = false;
+            //Vector3 s = transform.localScale;
+            //s.x = 1;
+            //transform.localScale = s;
             
         }
         else if (x < 0)
         {
-            Vector3 s = transform.localScale;
-            s.x = -1;
-            transform.localScale = s;
+            //Vector3 s = transform.localScale;
+            //s.x = -1;
+            //transform.localScale = s;
             
-            //GetComponent<SpriteRenderer>().flipX = true;
+            GetComponent<SpriteRenderer>().flipX = true;
         }
     }
     public void Jump()
