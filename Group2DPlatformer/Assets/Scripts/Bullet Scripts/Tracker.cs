@@ -7,30 +7,56 @@ public class Tracker : MonoBehaviour
 
     public float speed = 5f;
     public int damage = 1;
-    public float chaseDistance = 50f;
-    public Transform nearestEnemy;
+    //public float chaseDistance = 10f;
+    //public Transform nearestEnemy;
     public Rigidbody2D rb;
 
+    public GameObject target;
+    public bool instant = false;
+    float dist = 10000;
+    float timer;
     // Start is called before the first frame update
     void Start()
     {
         rb.velocity = transform.right * speed;
-        
-
-        nearestEnemy = GameObject.FindGameObjectWithTag("Enemy").transform;
+        FindTarget();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-
-
-
-        
-        Chase();
+        timer += Time.deltaTime;
+        if (target == null)
+        {
+            FindTarget();
+        }
+        else
+        {
+            if (instant)
+            {
+                transform.position = target.transform.position;
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            }
+            else
+            {
+                transform.right = Vector2.Lerp(transform.right, target.transform.position - transform.position, 0.2f * timer);//0.053f);
+                float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
+                GetComponent<Rigidbody2D>().velocity = transform.right * speed;
+            }
+        }
     }
-
+    void FindTarget()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            if (Vector3.Distance(transform.position, enemies[i].transform.position) < dist)
+            {
+                target = enemies[i];
+                dist = Vector3.Distance(transform.position, enemies[i].transform.position);
+            }
+        }
+    }
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         EnemyHealth enemy = hitInfo.GetComponent<EnemyHealth>();
@@ -41,13 +67,5 @@ public class Tracker : MonoBehaviour
 
         Destroy(gameObject);
     }
-
-    //If I have the time later I will try an A* approach
-    void Chase()
-    {
-        Vector2 chaseDirection = new Vector2(nearestEnemy.position.x - transform.position.x,
-            nearestEnemy.position.y - transform.position.y);
-        chaseDirection.Normalize();
-        GetComponent<Rigidbody2D>().velocity = chaseDirection * speed;
-    }
 }
+

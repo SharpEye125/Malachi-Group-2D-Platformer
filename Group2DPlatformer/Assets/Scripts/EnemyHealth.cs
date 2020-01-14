@@ -33,7 +33,9 @@ public class EnemyHealth : MonoBehaviour
     {
         animator.SetBool("isDead", true);
 
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
+
+        Destroy(gameObject);
+        //GetComponent<Collider2D>().enabled = false;
+        //this.enabled = false;
     }
 }
