@@ -25,16 +25,37 @@ public class Bounce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //in case it falls off the map
+        if (rb.velocity.y < -100)
+        {
+            Destroy(gameObject);
+        }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.contacts[0].normal == new Vector2(1,0) || collision.contacts[0].normal == new Vector2(-1, 0))
         {
+            //Destroy(gameObject);
+        }
+        if (collision.contacts[0].normal == new Vector2(0, 1) || collision.contacts[0].normal == new Vector2(0, -1))
+        {
+            GetComponent<Rigidbody2D>().AddForce
+                (new Vector2(0, 100 * bounceHeight));
+        }
+        else
+        {
             Destroy(gameObject);
         }
-            GetComponent<Rigidbody2D>().AddForce
-        (new Vector2(0, 100 * bounceHeight));
+
+        if (rb.velocity.x < speed && rb.velocity.x > 1)
+        {
+            rb.velocity = new Vector2 (speed, 0f);
+        }
+        else if (rb.velocity.x < speed && rb.velocity.x < -1)
+        {
+            rb.velocity = new Vector2(-speed, 0f);
+        }
+
         rb.gravityScale = gravity;
         
     }

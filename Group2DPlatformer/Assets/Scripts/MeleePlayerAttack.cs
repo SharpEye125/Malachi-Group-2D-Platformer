@@ -19,6 +19,8 @@ public class MeleePlayerAttack : MonoBehaviour
     }
 
     // Update is called once per frame
+
+        //need to fix changing sides with player
     void Update()
     {
         if (Time.time >= nextAttackTime)

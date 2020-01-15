@@ -21,13 +21,14 @@ public class PowerUps : MonoBehaviour
         {
             timer += Time.deltaTime;
             if (timer > powerUpTimer)
-                {
-                    hasPowerUp = false;
-                    powerUp = 0;
-                    timer = 0;
-                    UpdatePowerUps();
-                }
+            {
+                hasPowerUp = false;
+                powerUp = 0;
+                timer = 0;
+                UpdatePowerUps();
+            }
         }
+
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
