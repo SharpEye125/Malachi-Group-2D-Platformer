@@ -24,6 +24,6 @@ public class EnemyPace : MonoBehaviour
             moveDir *= -1;
             timer = 0;
         }
-        GetComponent<Rigidbody2D>().velocity = moveDir;
+        GetComponent<Rigidbody2D>().velocity = moveDir * moveSpeed;
     }
 }
