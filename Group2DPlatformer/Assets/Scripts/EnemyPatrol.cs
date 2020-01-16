@@ -22,6 +22,7 @@ public class EnemyPatrol : MonoBehaviour
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, raycastLength);
         if (groundInfo.collider == false)
         {
+            //Debug.Log("Edge hit" + transform.name);
             if (movingRight == true)
             {
                 transform.eulerAngles = new Vector3(0, 180, 0);
@@ -32,26 +33,26 @@ public class EnemyPatrol : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = true;
             }
+            
         }
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, raycastLength);
         if (collision.contacts[0].normal == new Vector2(1, 0) || collision.contacts[0].normal == new Vector2(-1, 0))
         {
-            RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, raycastLength);
-            if (groundInfo.collider == false)
+            if (movingRight == true)
             {
-                if (movingRight == true)
-                {
-                    transform.eulerAngles = new Vector3(0, 180, 0);
-                    movingRight = false;
-                }
-                else
-                {
-                    transform.eulerAngles = new Vector3(0, 0, 0);
-                    movingRight = true;
-                }
+                transform.eulerAngles = new Vector3(0, 180, 0);
+                movingRight = false;
             }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                movingRight = true;
+            }
+            //Debug.Log("Wall hit " + transform.name);
         }
     }
 

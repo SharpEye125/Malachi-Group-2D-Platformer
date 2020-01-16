@@ -7,8 +7,8 @@ public class Bounce : MonoBehaviour
     public float speed = 5f;
     public float bounceHeight = 1f;
     public int damage = 1;
-    public float gravity;
-    public float gravityMultiplier;
+    //public float gravity;
+    //public float gravityMultiplier;
     Rigidbody2D rb;
     //public Vector2 velocity;
     // Start is called before the first frame update
@@ -16,8 +16,8 @@ public class Bounce : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
-        gravity = rb.gravityScale;
-        rb.gravityScale = gravity * 2;
+        //gravity = rb.gravityScale;
+        //rb.gravityScale = gravity * 2;
         //rb = GetComponent<Rigidbody2D>();
         //velocity = rb.velocity;
     } 
@@ -33,30 +33,20 @@ public class Bounce : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.contacts[0].normal == new Vector2(1,0) || collision.contacts[0].normal == new Vector2(-1, 0))
-        {
-            //Destroy(gameObject);
-        }
-        if (collision.contacts[0].normal == new Vector2(0, 1) || collision.contacts[0].normal == new Vector2(0, -1))
-        {
-            GetComponent<Rigidbody2D>().AddForce
-                (new Vector2(0, 100 * bounceHeight));
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
 
-        if (rb.velocity.x < speed && rb.velocity.x > 1)
+        GetComponent<Rigidbody2D>().AddForce
+                (new Vector2(0, 100 * bounceHeight));
+
+        if (rb.velocity.x < speed && rb.velocity.x > .01)
         {
             rb.velocity = new Vector2 (speed, 0f);
         }
-        else if (rb.velocity.x < speed && rb.velocity.x < -1)
+        else if (rb.velocity.x < speed && rb.velocity.x < -.01)
         {
             rb.velocity = new Vector2(-speed, 0f);
         }
 
-        rb.gravityScale = gravity;
+        //rb.gravityScale = gravity;
         
     }
 

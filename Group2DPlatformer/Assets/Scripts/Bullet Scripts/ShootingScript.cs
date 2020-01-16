@@ -9,7 +9,7 @@ public class ShootingScript : MonoBehaviour
     public GameObject bounce;
     public GameObject tracker;
 
-    [Range(0, 3)]
+    [Range(2, 3)]
     public int powerUps = 3;
 
     // Start is called before the first frame update
@@ -43,9 +43,6 @@ public class ShootingScript : MonoBehaviour
     {
         switch (powerUps)
         {
-            case 1:
-                Instantiate(bullet, firePoint.position, firePoint.rotation);
-                break;
             case 2:
                 Instantiate(bounce, firePoint.position, firePoint.rotation);
                 break;
@@ -53,7 +50,7 @@ public class ShootingScript : MonoBehaviour
                 Instantiate(tracker, firePoint.position, firePoint.rotation);
                 break;
             default:
-
+                Instantiate(bullet, firePoint.position, firePoint.rotation);
                 break;
         }
         

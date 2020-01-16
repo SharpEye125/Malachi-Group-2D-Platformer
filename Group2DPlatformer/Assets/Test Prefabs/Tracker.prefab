@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7357288145509595948}
   - component: {fileID: 9022382499646098619}
   - component: {fileID: 1206683889119503917}
-  - component: {fileID: 1106742218945722400}
   - component: {fileID: 1349687661000156977}
+  - component: {fileID: -804520923533245093}
   m_Layer: 10
   m_Name: Tracker
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 926562892346723591}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.065910764, y: 0.5189096, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,9 +72,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.4793223, g: 1, b: 0.41176474, a: 1}
+  m_SortingOrder: 6
+  m_Sprite: {fileID: 4206860055589038045, guid: c52589f571e9d2f40bb1c948c4c2caa8,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,11 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1c368bf9e8e0646b08c15c30f46ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7.5
+  speed: 0.5
   damage: 1
-  chaseDistance: 50
-  nearestEnemy: {fileID: 0}
   rb: {fileID: 1349687661000156977}
+  target: {fileID: 0}
+  instant: 0
 --- !u!114 &1206683889119503917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,22 +118,6 @@ MonoBehaviour:
   bulletLifetime: 10
   lifetimeDestroy: 0
   contactDestroy: 1
---- !u!58 &1106742218945722400
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926562892346723591}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
 --- !u!50 &1349687661000156977
 Rigidbody2D:
   serializedVersion: 4
@@ -154,3 +139,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!58 &-804520923533245093
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926562892346723591}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
