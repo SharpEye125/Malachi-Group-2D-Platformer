@@ -7,6 +7,9 @@ public class Bounce : MonoBehaviour
     public float speed = 5f;
     public float bounceHeight = 1f;
     public int damage = 1;
+
+    public float left = -0.01f;
+    public float right = 0.01f;
     //public float gravity;
     //public float gravityMultiplier;
     Rigidbody2D rb;
@@ -39,11 +42,11 @@ public class Bounce : MonoBehaviour
         GetComponent<Rigidbody2D>().AddForce
                 (new Vector2(0, 100 * bounceHeight));
 
-        if (rb.velocity.x < speed && rb.velocity.x > .01)
+        if (rb.velocity.x < speed && rb.velocity.x > right)
         {
             rb.velocity = new Vector2 (speed, 0f);
         }
-        else if (rb.velocity.x < speed && rb.velocity.x < -.01)
+        else if (rb.velocity.x < speed && rb.velocity.x < right)
         {
             rb.velocity = new Vector2(-speed, 0f);
         }
