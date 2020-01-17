@@ -15,10 +15,10 @@ public class Bounce : MonoBehaviour
     Rigidbody2D rb;
     //public Vector2 velocity;
     // Start is called before the first frame update
-    public Animator Animator;
+    //public Animator Animator;
     void Start()
     {
-        Animator = GetComponent<Animator>();
+        //Animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
         //gravity = rb.gravityScale;
@@ -38,7 +38,7 @@ public class Bounce : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Animator.SetTrigger("bounce");
+        //Animator.SetTrigger("bounce");
         GetComponent<Rigidbody2D>().AddForce
                 (new Vector2(0, 100 * bounceHeight));
 
