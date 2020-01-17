@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class CountDown : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class CountDown : MonoBehaviour
     void Update()
     {
         countDown.text = ("" + timeLeft); //Showing the Score on the Canvas
+        if (timeLeft <= 0)
+        {
+            SceneManager.LoadScene("Lose");
+        }
     }
 
     IEnumerator LoseTime()
