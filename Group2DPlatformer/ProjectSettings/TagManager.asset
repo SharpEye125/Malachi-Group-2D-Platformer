@@ -9,6 +9,9 @@ TagManager:
   - PowerUp3
   - Enemy
   - Death
+  - Level 2
+  - Level 3
+  - Win
   layers:
   - Default
   - TransparentFX
