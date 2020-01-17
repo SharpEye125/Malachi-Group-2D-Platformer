@@ -33,7 +33,7 @@ public class ShootingScript : MonoBehaviour
             firePoint.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1")&& Time.timeScale != 0)
         {
             Shoot();
         }

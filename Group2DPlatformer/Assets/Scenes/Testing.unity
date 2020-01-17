@@ -435,7 +435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 942540712}
   bullet: {fileID: 7468157689472533120, guid: f74e40083715e1b439bf42104e5164a6, type: 3}
-  bounce: {fileID: 4243102509042112585, guid: 5c50f39d8d8bda54cbb5a6586702b278, type: 3}
+  bounce: {fileID: 2249038192642533459, guid: 423ce6de7d1af1c4fbcb6800ee78a072, type: 3}
   tracker: {fileID: 926562892346723591, guid: dae7de0f7f4f3b24ebaee9df24136f4f, type: 3}
   powerUps: 0
 --- !u!114 &319474394
