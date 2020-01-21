@@ -12,6 +12,8 @@ TagManager:
   - Level 2
   - Level 3
   - Win
+  - Health
+  - Points
   layers:
   - Default
   - TransparentFX
